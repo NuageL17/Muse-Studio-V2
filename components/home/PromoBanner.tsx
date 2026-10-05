@@ -1,0 +1,4 @@
+"use client";
+export default function PromoBanner() {
+  return (<section id="promo" className="relative overflow-hidden bg-charcoal py-16 md:py-24"><div className="absolute inset-0 pointer-events-none"><div className="absolute top-0 left-0 w-[30vw] h-[30vw] rounded-full bg-rose-300/10 blur-[100px]"/></div><div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-center"><h3 className="font-inter font-extrabold text-3xl md:text-6xl tracking-[-0.04em] text-white mb-4">-10% <span className="text-rose-200/90">première visite</span></h3><p className="text-white/60 text-base md:text-xl max-w-lg mx-auto mb-8">Un geste de bienvenue — parce que la première impression doit toujours être belle.</p><a href="/reservation" className="inline-block bg-white text-charcoal px-8 py-4 rounded-full text-sm font-medium hover:bg-white/90 transition shadow-[0_4px_20px_rgba(255,255,255,0.15)]">Réserver maintenant</a></div></section>);
+}
