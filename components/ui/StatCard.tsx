@@ -17,6 +17,15 @@ const accentMap: Record<NonNullable<StatCardProps["accent"]>, string> = {
   sky: "bg-[#f0f9ff]",
 };
 
+export function StatCardStacked({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+  return (
+    <div className="flex flex-col items-start gap-1 bg-[#faf7f4] rounded-2xl p-5 shadow-sm border border-border/20">
+      <div className="text-xs uppercase tracking-wider text-muted">{label}</div>
+      <div className="font-inter font-extrabold text-3xl text-charcoal tracking-tight">{value}</div>
+    </div>
+  );
+}
+
 export default function StatCard({ icon, label, value, change, accent = "default", onClick }: StatCardProps) {
   return (
     <button

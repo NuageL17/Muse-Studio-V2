@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import MuseBackground from "@/components/home/MuseBackground";
-import { Hero } from "@/components/home/Hero";
+import Hero from "@/components/home/Hero";
 import { BottomTabBar } from "@/components/layout/BottomTabBar";
 
 export const dynamic = "force-dynamic";
