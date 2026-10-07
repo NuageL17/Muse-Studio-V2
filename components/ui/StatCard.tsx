@@ -1,45 +1,55 @@
 "use client";
+
 import { ReactNode } from "react";
 
-export interface StatCardProps {
-  icon: ReactNode;
+interface StatCardProps {
   label: string;
   value: string | number;
-  change?: string;
-  accent?: "default" | "rose" | "amber" | "sky";
-  onClick?: () => void;
+  icon: ReactNode;
+  accent?: boolean;
 }
 
-const accentMap: Record<NonNullable<StatCardProps["accent"]>, string> = {
-  default: "bg-[#f5f3ee]",
-  rose: "bg-[#fdf2f2]",
-  amber: "bg-[#fefbec]",
-  sky: "bg-[#f0f9ff]",
-};
-
-export function StatCardStacked({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+export function StatCard({ label, value, icon, accent = false }: StatCardProps) {
   return (
-    <div className="flex flex-col items-start gap-1 bg-[#faf7f4] rounded-2xl p-5 shadow-sm border border-border/20">
-      <div className="text-xs uppercase tracking-wider text-muted">{label}</div>
-      <div className="font-inter font-extrabold text-3xl text-charcoal tracking-tight">{value}</div>
+    <div className="rounded-2xl border bg-white p-5 transition-smooth">
+      <div className="flex items-center gap-3">
+        <span className="text-2xl" aria-hidden>{icon}</span>
+        <div>
+          <p className="text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+            {label}
+          </p>
+          <p
+            className={`text-3xl font-light mt-0.5 ${accent ? "font-normal" : ""}`}
+            style={accent ? { color: "var(--foreground)" } : undefined}
+          >
+            {value}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default function StatCard({ icon, label, value, change, accent = "default", onClick }: StatCardProps) {
+export function StatCardStacked({
+  label,
+  value,
+  icon,
+  accent = false,
+}: StatCardProps) {
   return (
-    <button
-      onClick={onClick}
-      className={`flex items-center gap-4 w-full text-left rounded-[1.5rem] p-5 border border-border/40 bg-${accentMap[accent].slice(1)} hover:scale-[1.01] transition-all shadow-[0_1px_4px_rgba(34,34,34,0.04)]`}
-    >
-      <div className="w-11 h-11 rounded-full bg-[#f5f3ee] flex items-center justify-center flex-shrink-0 text-charcoal">
-        {icon}
+    <div className="rounded-2xl border bg-white p-5 transition-smooth">
+      <p className="text-xs uppercase tracking-[0.15em]" style={{ color: "var(--muted)" }}>
+        {label}
+      </p>
+      <div className="flex items-end justify-between mt-1">
+        <p
+          className={`text-3xl font-light ${accent ? "font-normal" : ""}`}
+          style={accent ? { color: "var(--foreground)" } : undefined}
+        >
+          {value}
+        </p>
+        <span className="text-2xl" aria-hidden>{icon}</span>
       </div>
-      <div className="flex-1 min-w-0">
-        <div className="text-xs uppercase tracking-wider text-muted font-medium mb-1">{label}</div>
-        <div className="font-inter font-bold text-2xl text-charcoal leading-none">{value}</div>
-        {change && <div className="text-xs text-muted mt-0.5">{change}</div>}
-      </div>
-    </button>
+    </div>
   );
 }

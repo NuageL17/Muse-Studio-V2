@@ -282,6 +282,8 @@ export default async function ClienteDetailPage({ params }: Params) {
             prochain_soin_recommande: profile.prochain_soin_recommande,
             date_prochain_soin: profile.date_prochain_soin,
             vip: profile.vip ?? false,
+            info_importante: profile.info_importante ?? null,
+            info_signalee_cliente: profile.info_signalee_cliente ?? null,
           }}
           role="gerante"
         />

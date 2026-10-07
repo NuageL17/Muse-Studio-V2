@@ -106,6 +106,10 @@ export default async function TravailleuseClientePage({ params }: Params) {
               prochain_soin_recommande: cliente.prochain_soin_recommande,
               date_prochain_soin: cliente.date_prochain_soin,
               vip: cliente.vip,
+              email_contact: null,
+              comment_connu: null,
+              info_importante: cliente.info_importante ?? null,
+              info_signalee_cliente: cliente.info_signalee_cliente ?? null,
             }}
             role="travailleuse"
           />
