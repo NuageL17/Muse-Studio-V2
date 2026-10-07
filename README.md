@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muse Studio — Design 2026 (v2)
 
-## Getting Started
+Site web PWA du salon d'esthétique Muse Studio (Algérie / Paris).
+Stack : Next.js 16 + TypeScript + Tailwind CSS v4 + Supabase + Vercel.
 
-First, run the development server:
+## Design
+- Palette : Ivory Silence (#f5f3ee, #222222, blanc pur)
+- Typo : Inter Tight (sans-serif) + Instrument Serif (titres)
+- Logo : Muse. STUDIO 2027 (noir gras, blanc cassé)
+- Style : minimaliste luxe chic, mobile-first, pas de doré saturé
+- Animations : sobres (cubic-bezier), prefers-reduced-motion respecté
 
+## Sections reconstruites (branch design-2026)
+1. Hero — MUSE. XXL uppercase + glow + sticker Studio 2027
+2. Prestations — Bento grid + glass cards + prix DA
+3. Pourquoi nous — 4 points + stats (98%, 500+, 15 ans)
+4. Équipe — Carrousel 3 membres
+5. Réservation — Wizard 5 étapes (calendrier, pill, upload, sticky CTA)
+6. Avis clients — Serif italique + étoiles
+7. Promo — -10% première visite (rose poudré)
+8. Contact / Footer — minimal, icon SVG
+
+## Installation
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Déploiement
+```bash
+vercel
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licence
+Projet privé — NuageL17 / Salon Muse.
